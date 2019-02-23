@@ -46,14 +46,15 @@ public class VotePersonalIdentification {
         return voterLastName.matches("^[-a-zA-Z-]+$");
     }
 
-    // In this validate method regex allows for \\w = digits and alphabets, . and -.
+    // In this validate method regex allows for lettera and numbers but must contain atleast one of each
     public boolean validateAddress(String voterAddress) {
-        return voterAddress.matches("^[\\w\\s-.]+$");
+        return voterAddress.matches("^(([a-zA-z]+.*[0-9]+.*)|[0-9]+.*([A-Za-z]+.*)(\\w\\d]*))+$");
     }
 
-    // In this validate method regex allows for digits&letters + whitespace, needs to be 0-7 long.
+    // In this validate method regex allows for digits&letters + whitespace, needs to be at least 6 characters long.
+    // Assuming canadian postal codes.
     public boolean validatePostalCode(String voterPostalCode) {
-        return voterPostalCode.matches("^[\\w\\s]{0,7}+$");
+        return voterPostalCode.matches("^[\\w\\s]{6,}+$");
     }
 
     // In this validate method regex allows for all letters and white spaces
