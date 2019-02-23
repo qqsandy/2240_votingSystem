@@ -144,8 +144,8 @@ public class Main {
         candidates[0]= new Candidate("John Cena", "You can't see me!, (Green Party)");
         candidates[1]= new Candidate("Leroy Jenkins", "LEEEEROOOOOYYYY!, (Liberal Party)");
         candidates[2]= new Candidate("Aubrey Graham", "Musician turned politician, (New Democratic Party)");
-        candidates[3]= new Candidate("Joe Rogen", "Original podcast pioneer, PC Party");
-        candidates[4]= new Candidate("Justin Trudeau", "Secound best Trudeau Prime Minister, (Liberal Party)");
+        candidates[3]= new Candidate("Joe Rogen", "Original podcast pioneer, (PC Party)");
+        candidates[4]= new Candidate("Justin Trudeau", "The second best Trudeau Prime Minister, (Liberal Party)");
 
         // A creation of a new object that will create a new ballot for the candidates above, needed to be created
         // after the declaration of the array candidates above.

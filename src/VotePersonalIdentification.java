@@ -80,7 +80,7 @@ public class VotePersonalIdentification {
     }
 
 
-        // Setters and Getters for each of the private fields
+        // Setters and Getters for each of the private fields in this class.
         public void setVoterLastName (String voterLastName){
             this.voterLastName = voterLastName;
         }
