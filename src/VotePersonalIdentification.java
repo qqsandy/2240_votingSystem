@@ -38,7 +38,7 @@ public class VotePersonalIdentification {
 
     // In this validate method regex allows for alphabets a-z caps and lower case and -.
     public boolean validateFirstName(String voterFirstName) {
-        return voterFirstName.matches("^[a-zA-Z-]+$");
+        return voterFirstName.matches("^[a-zA-Z-+']+$");
     }
 
     // In this validate method regex allows for a-z caps/uncaps and -.
@@ -48,7 +48,7 @@ public class VotePersonalIdentification {
 
     // In this validate method regex allows for lettera and numbers but must contain atleast one of each and allows for ., -.
     public boolean validateAddress(String voterAddress) {
-        return voterAddress.matches("^(([a-zA-z]+.*[0-9]+.*)|[0-9]+.*([A-Za-z]+.*)([\\w\\d]*)+-.)+$");
+        return voterAddress.matches("^(([a-zA-z]+.*[0-9]+.*)|[0-9]+.*([A-Za-z]+.*)([.\\w\\d]*))+$");
     }
 
     // In this validate method regex allows for digits&letters + whitespace, needs to be at least 6 characters long.
