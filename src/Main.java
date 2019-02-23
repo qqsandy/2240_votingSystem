@@ -142,7 +142,7 @@ public class Main {
         // These 5 arrays will act as candidates for the election/voting system.
         Candidate[] candidates = new Candidate[5];
         candidates[0]= new Candidate("John Cena", "You can't see me!, (Green Party)");
-        candidates[1]= new Candidate("Leroy Jenkins", "LEEEEROOOOOYYYY!, (Liberal Party)");
+        candidates[1]= new Candidate("Leroy Jenkins", "LEEEEROOOOOYYYY JENNNKINSSS!, (Liberal Party)");
         candidates[2]= new Candidate("Aubrey Graham", "Musician turned politician, (New Democratic Party)");
         candidates[3]= new Candidate("Joe Rogen", "Original podcast pioneer, (PC Party)");
         candidates[4]= new Candidate("Justin Trudeau", "The second best Trudeau Prime Minister, (Liberal Party)");
