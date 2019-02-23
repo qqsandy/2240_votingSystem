@@ -1,8 +1,11 @@
 public class VotePersonalIdentification {
+
+    // Private fields from class diagram
     private String voterLastName, voterFirstName, voterAddress, voterCity, voterPostalCode;
-    private int voterSIN, voterID;
+    private int voterSIN;
 
 
+    // An no argument constructor
     VotePersonalIdentification() {
         this.voterLastName = "Jenkins";
         this.voterFirstName = "Leroy";
@@ -12,7 +15,7 @@ public class VotePersonalIdentification {
         this.voterSIN = 000000000;
     }
 
-    // arg constructor that allows for subclasses to take the super of this.
+    // An arg constructor that is overloaded as their are two constructors. Used when initlized to given parameter value
     VotePersonalIdentification(String voterLastName, String voterFirstName, String voterAddress, String voterCity, String voterPostalCode, int voterSIN) {
         this.voterLastName = voterLastName;
         this.voterFirstName = voterFirstName;
@@ -22,56 +25,62 @@ public class VotePersonalIdentification {
         this.voterSIN = voterSIN;
     }
 
-    // Might switch to this.XXX??
+    // An override toString, where overwritten in the subclasses, returns/displays the voters credentials.
     @Override
     public String toString() {
         String vString = "Voter(s) Information: ";
-        vString += ("First name: " + voterFirstName + "Last name: " + voterLastName + "Address: " + voterAddress + "City: " + voterCity + "Postal Code: " + voterPostalCode + "ID: " + voterID);
+        vString += ("First name: " + this.voterFirstName + "Last name: " + this.voterLastName + "Address: " + this.voterAddress + "City: " + this.voterCity + "Postal Code: " + this.voterPostalCode);
         return vString;
     }
 
+
     // ALL VALIDATION USED WITH REGEX TO VALIDATE FORMAT STRING OF THE VOTER'S INFORMATION.
+
+    // In this validate method regex allows for alphabets a-z caps and lower case and -.
     public boolean validateFirstName(String voterFirstName) {
         return voterFirstName.matches("^[a-zA-Z-]+$");
     }
 
+    // In this validate method regex allows for a-z caps/uncaps and -.
     public boolean validateLastName(String voterLastName) {
         return voterLastName.matches("^[-a-zA-Z-]+$");
     }
 
+    // In this validate method regex allows for \\w = digits and alphabets, . and -.
     public boolean validateAddress(String voterAddress) {
-        return voterAddress.matches("^[\\w\\s]+$");
+        return voterAddress.matches("^[\\w\\s-.]+$");
     }
 
+    // In this validate method regex allows for digits&letters + whitespace, needs to be 0-7 long.
     public boolean validatePostalCode(String voterPostalCode) {
         return voterPostalCode.matches("^[\\w\\s]{0,7}+$");
     }
 
+    // In this validate method regex allows for all letters and white spaces
     public boolean validateCity(String voterCity) {
         return voterCity.matches("^[a-zA-Z\\s]+$");
     }
 
-    // comment later ( might need to fix. ) ***
+    // In this validate method regex allows for all digits and needs to be 9 digits long.
     public boolean validateSIN(String voterSIN) {
         return voterSIN.matches("^[\\d+]{9,}+$");
     }
+
+    // Just a message used to notify user that they have successfully registered.
         public String successfullyRegistered () {
             return "Successfully Registered";
         }
 
-   /* // Should return a unique Id per voter
+    // Should return a unique Id per voter starting at 1000 adding +1 for each new voter.
     public String voterID(){
-        int i =0;
-        voterID=Integer.toString(i++);
-        return this.voterID;
+        int counter = 1000;
+        Integer unique = new Integer(counter);
+        String uniqueID = unique.toString(counter++);
+        return uniqueID;
     }
-*/
+
 
         // Setters and Getters for each of the private fields
-
-        public void setVoterID (String voterID){
-            this.voterLastName = voterID;
-        }
         public void setVoterLastName (String voterLastName){
             this.voterLastName = voterLastName;
         }
